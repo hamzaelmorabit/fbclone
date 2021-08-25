@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .Icon {
+        @apply hover:bg-gray-200 active:text-blue-500 rounded-md py-1 md:w-10 md:h-10 w-8 h-8;
+    }
+}
