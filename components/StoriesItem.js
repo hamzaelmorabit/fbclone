@@ -4,7 +4,7 @@ function StoriesItem({ name, src, profile }) {
     return (
       <div
         className="relative hover:scale-105 transform transition
-      duration-200  w-20 hover:animate-pulse
+      duration-200 hover:opacity-75 w-20
     
       "
       >
@@ -15,16 +15,17 @@ function StoriesItem({ name, src, profile }) {
         >
           <Image
             src={profile}
+            // src={"https://links.papareact.com/5me"}
             layout="fixed"
             width={40}
             height={40}
-                    className="rounded-full "
-                    objectFit="cover"
+            className="rounded-full "
           />
         </div>
         <div className="relative hidden md:inline-flex">
           <Image
             src={src}
+            // src={"https://links.papareact.com/5me"}
             layout="fixed"
             width={100}
             objectFit="cover"

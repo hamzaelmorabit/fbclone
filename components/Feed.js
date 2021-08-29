@@ -4,7 +4,7 @@ import Stories from "./Stories";
 
 export default function Feed() {
   return (
-    <div>
+    <div className="overflow-auto h-screen scrollbar-hide">
       <Stories />
       <Staties />
       <Contain />

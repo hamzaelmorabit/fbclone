@@ -14,7 +14,7 @@ import { useSession } from "next-auth/client";
 function Header() {
   const [sesstion, setSesstion] = useSession();
   return (
-    <div className="flex justify-between bg-white p-4   shadow-md top-0 z-50">
+    <div className="sticky flex justify-between bg-white p-4   shadow-md top-0 z-50">
       {/* Left*/}
 
       <div className="flex space-x-2">
@@ -76,7 +76,7 @@ function Header() {
           <div className="relative w-9 h-9">
             <Image
               // src="https://links.papareact.com/qd3"
-              src={sesstion.user.image}
+              src={sesstion.user.image || "https://links.papareact.com/5me"}
               layout="fill"
               className="relative rounded-full"
             />

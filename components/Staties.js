@@ -30,6 +30,7 @@ function Staties() {
         message: inputRef.current.value,
         email: session_.user.email,
         name: session_.user.name,
+        image: session_.user.image,
         timesTamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((doc) => {
@@ -78,7 +79,8 @@ function Staties() {
         <div className="relative w-9 h-9 mr-2 ">
           <Image
             // src="https://links.papareact.com/qd3"
-            src={session_.user.image}
+            src={session_.user.image || "https://links.papareact.com/5me"}
+            // src={"https://links.papareact.com/5me"}
             layout="fill"
             className="relative rounded-full"
           />
@@ -98,12 +100,13 @@ function Staties() {
         </form>
         {imagePost && (
           <div className="relative flex flex-col items-center justify-center">
-            <div className="relative w-9 h-9 md:w-12 md:h-12  mr-2 ml-2 ">
+            <div className="relative w-9 h-9 md:w-12 md:h-12  mr-2 ml-2 rounded-full ">
               <Image
                 className="relative rounded-full"
                 layout="fill"
                 objectFit="cover"
                 src={imagePost}
+                // src={"https://links.papareact.com/5me"}
               />
             </div>
             <p

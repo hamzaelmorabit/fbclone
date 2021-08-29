@@ -6,7 +6,7 @@ function SideBarItem({ src_, Icon, title }) {
       {src_ == "" ? (
         <>
           <div className={"w-6"}>
-            <Icon  className="text-blue-500"/>
+            <Icon className="text-blue-500" />
           </div>
           <p className="hidden text-sm  sm:inline-flex font-semibold">
             {title}
@@ -16,7 +16,8 @@ function SideBarItem({ src_, Icon, title }) {
         <div className="relative flex">
           <div className="relative w-10 h-10">
             <Image
-              src={src_}
+              src={src_ || "https://links.papareact.com/5me"}
+              // src={ "https://links.papareact.com/5me"}
               layout="fixed"
               className="relative rounded-full"
               width={25}

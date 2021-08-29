@@ -1,37 +1,27 @@
 import ContainItem from "./ContainItem.js";
-const SHARED = [
-  {
-    name: "Hamza EL MORABIT",
-    src: "https://links.papareact.com/zof",
-    profile: "https://links.papareact.com/l4v",
-  },
-  {
-    name: "Elon Musk",
-    src: "https://links.papareact.com/4zn",
-    profile: "https://links.papareact.com/kxk",
-  },
-  {
-    name: "Jaff Bezoz",
-    src: "https://links.papareact.com/k2j",
-    profile: "https://links.papareact.com/f0p",
-  },
-  {
-    name: "Mark Zuckerberh",
-    src: "https://links.papareact.com/xql",
-    profile: "https://links.papareact.com/snf",
-  },
-  {
-    name: "Bill Gates",
-    src: "https://links.papareact.com/4u4",
-    profile: "https://links.papareact.com/zvy",
-  },
-];
+import { useCollection } from "react-firebase-hooks/firestore";
+import { db } from "../firebase";
+
 function Contain() {
+  const [realtimePosts, error, loading] = useCollection(
+    db.collection("posts").orderBy("timesTamp", "desc")
+  );
+  console.log(loading, "loading");
   return (
     <div>
-        {SHARED.map(({ name, src, profile }) => (
-          <ContainItem key={src} name={name} src={src} profile={profile} />
-        ))}
+      {realtimePosts?.docs.map((post) => (
+        <ContainItem
+          key={post.id}
+          name={post.data().name}
+          src={post.data().src}
+          email={post.data().email}
+          message={post.data().message}
+          image={post.data().image}
+          postImage={post.data().postImage}
+          timesTamp={post.data().timesTamp}
+          loading={loading}
+        />
+      ))}
     </div>
   );
 }

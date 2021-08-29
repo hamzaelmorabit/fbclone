@@ -1,4 +1,5 @@
 import StoriesItem from "./StoriesItem";
+
 const STORIES = [
   {
     name: "Hamza EL MORABIT",
@@ -28,11 +29,13 @@ const STORIES = [
 ];
 
 export default function Stories() {
+
   return (
     <div className="flex md:space-x-2 mt-3  space-x-2   justify-evenly">
-      {STORIES.map(({ name, src, profile }) => (
+     {STORIES.map(({ name, src, profile }) => (
         <StoriesItem key={src} name={name} src={src} profile={profile} />
-      ))}
+      ))} 
+  
     </div>
   );
 }
