@@ -4,6 +4,7 @@ module.exports = {
       "firebasestorage.googleapis.com",
       "links.papareact.com",
       "scontent.frba2-1.fna.fbcdn.net",
+      "scontent.frba3-1.fna.fbcdn.net",
       "platform-lookside.fbsbx.com",
       "firebasestorage.gooleapis.com",
     ],

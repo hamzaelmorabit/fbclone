@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function RightSideBarItem({ name, src, profile }) {
   return (
-    <div className="relative flex items-center hover:bg-gray-200 rounded-md w-3/4">
+    <div className="relative flex items-center hover:bg-gray-200 rounded-md w-3/4 cursor-pointer">
       <div className="relative w-10 h-10">
         <Image
           src={src || "https://links.papareact.com/5me"}

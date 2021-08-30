@@ -41,23 +41,24 @@ export default function ContainItem({
         </div>
       </div>
       <p className=" font-semibold text-[16px] ml-2 mb-2">{message}</p>
-           {postImage && (
-      <div
-        className={`relative  h-56 md:w-[550px]  md:h-[550px] ${
-          !postImage && "flex justify-center items-center"
-        }`}
-      >
-   
+      {postImage && (
+        <div
+          // md:h-[550px]md:w-[550px]
+          className={`relative   md:w-[569px]   `}
+          // ${
+          //   !postImage && "flex justify-center items-center"
+          // }
+        >
           <img
             // src={"https://links.papareact.com/5me"}
 
             src={postImage}
             layout="fill"
             objectFit="cover"
-            className="relative"
           />
-    </div> )}
-        {/* {!postImage && (
+        </div>
+      )}
+      {/* {!postImage && (
           <img
             // src={"https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif"}
             src={
@@ -68,18 +69,21 @@ export default function ContainItem({
             className="relative items-center justify-center"
           />
         )} */}
- 
-      <div className="flex justify-evenly mt-3 py-2 border-t">
-        <div className="flex items-center">
-          <ThumbUpIcon className="relative w-6 h-8 mr-2 text-gray-500 bg-white" />
+
+      <div className="flex justify-center border-gray-300 border-t  pt-0  ">
+        <div
+          className="flex items-center  sm:py-1   sm:px-14
+      py-1   px-8  hover:bg-gray-300 rounded-bl-lg"
+        >
+          <ThumbUpIcon className="relative sm:w-6 sm:h-8 mr-2 w-5 text-gray-500 " />
           <p className="text-gray-500 text-[14px]  md:text-[16px]">Like</p>
         </div>
-        <div className="flex items-center">
-          <ChatAltIcon className=" text-gray-500 relative w-6 h-8 mr-2 " />
+        <div className="flex items-center  sm:px-14 px-12 hover:bg-gray-300 ">
+          <ChatAltIcon className=" text-gray-500 relative sm:w-6 sm:h-8 w-5 mr-2 " />
           <p className=" text-gray-500  text-[14px]  md:text-[16px]">Comment</p>
         </div>
-        <div className="flex items-center">
-          <ShareIcon className=" text-gray-500 relative w-6 h-8 mr-2 " />
+        <div className="flex items-center  sm:px-14  px-8 hover:bg-gray-300 rounded-br-lg">
+          <ShareIcon className=" text-gray-500 relative sm:w-6 md:h-8 w-5 mr-2 " />
 
           <p className=" text-gray-500  text-[14px]  md:text-[16px]">Share</p>
         </div>

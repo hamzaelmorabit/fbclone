@@ -1,4 +1,6 @@
 import SideBarItem from "./SideBarItem";
+import React, { useState } from "react";
+
 import {
   SearchIcon,
   FlagIcon,
@@ -9,13 +11,18 @@ import {
   ViewGridIcon,
   ChevronDownIcon,
   BellIcon,
+  ClockIcon,
+  DesktopComputerIcon,
 } from "@heroicons/react/outline";
 import { useSession } from "next-auth/client";
+import { CalendarIcon, UsersIcon } from "@heroicons/react/solid";
 function SideBar() {
   const [session_, setSesstion] = useSession();
+  const [isClickMore, setIsClickMore] = useState(false);
+
   return (
     <div
-      className="sticky
+      className="sticky 
 top-24 z-50"
     >
       <div className="space-y-2">
@@ -26,15 +33,26 @@ top-24 z-50"
           title={session_.user.name}
         />
       </div>
-      <div className="space-y-5 ">
-        <SideBarItem src_="" Icon={UserGroupIcon} title={"Friends"} />
-        <SideBarItem src_="" Icon={MinusCircleIcon} title={"MinusCircleIcon"} />
-        <SideBarItem src_="" Icon={ChatIcon} title={"ChatIcon"} />
-        <SideBarItem src_="" Icon={ViewGridIcon} title={"Friends"} />
-        <SideBarItem src_="" Icon={BellIcon} title={"ChevronDownIcon"} />
-        <SideBarItem src_="" Icon={SearchIcon} title={"SearchIcon"} />
-        <SideBarItem src_="" Icon={ChevronDownIcon} title={"BellIcon"} />
+      <div className="space-y-1  ">
+        <SideBarItem src_="" Icon={UsersIcon} title={"Friends"} />
+        <SideBarItem src_="" Icon={UserGroupIcon} title={"Group"} />
+        <SideBarItem src_="" Icon={ShoppingCartIcon} title={"Marketplace"} />
+        <SideBarItem src_="" Icon={DesktopComputerIcon} title={"Watch"} />
+        <SideBarItem src_="" Icon={CalendarIcon} title={"Events"} />
+        <SideBarItem src_="" Icon={ClockIcon} title={"Memories"} />
+        <div onClick={() => setIsClickMore((prev) => !prev)}>
+          <SideBarItem src_="" Icon={ChevronDownIcon} title={"See more"} />
+        </div>
       </div>
+
+      {isClickMore && (
+        <div className="space-y-1   hover:scale-105  transition duration-700 ease-in-out transform">
+          <SideBarItem src_="" Icon={UsersIcon} title={"Friends"} />
+
+          <SideBarItem src_="" Icon={UserGroupIcon} title={"Group"} />
+          <SideBarItem src_="" Icon={ShoppingCartIcon} title={"Marketplace"} />
+        </div>
+      )}
     </div>
   );
 }

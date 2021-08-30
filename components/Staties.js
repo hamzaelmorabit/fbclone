@@ -121,15 +121,19 @@ function Staties() {
       <div className="border-b w-full my-3" />
       <div className="flex justify-evenly ">
         <div className="flex items-center p-2 rounded-xl hover:bg-gray-100 space-x-1 cursor-pointer">
-          <VideoCameraIcon className="relative w-7 h-7 mr-2 text-red-500 md:w-9" />
-          <p className="hidden md:inline-flex">Live video</p>
+          <VideoCameraIcon className="relative w-7 h-7 md:md:mr-2  mr-1 text-red-500 md:w-9" />
+          <p className=" md:inline-flex text-[14px] whitespace-nowrap md:text-base">
+            Live video
+          </p>
         </div>
         <div
           onClick={() => filePickerRef.current.click()}
           className="flex items-center cursor-pointer  p-2 rounded-xl hover:bg-gray-100 space-x-1"
         >
-          <CameraIcon className="relative w-7 h-7 mr-2 text-green-500 md:w-9" />
-          <p className="hidden md:inline-flex">Photo/video</p>
+          <CameraIcon className="relative w-6 h-6 md:mr-2 mr-1 text-green-500 md:w-9" />
+          <p className=" md:inline-flex text-[14px] whitespace-nowrap md:text-base">
+            Photo/video
+          </p>
           <input
             type="file"
             ref={filePickerRef}
@@ -138,9 +142,11 @@ function Staties() {
           />
         </div>
         <div className="flex items-center p-2 rounded-xl hover:bg-gray-100 space-x-1 cursor-pointer">
-          <EmojiHappyIcon className="relative w-7 h-7 mr-2 text-yellow-400 md:w-9" />
+          <EmojiHappyIcon className="relative w-7 h-7 md:mr-2 mr-1 text-yellow-400 md:w-9" />
 
-          <p className="hidden md:inline-flex">Felling Acivity</p>
+          <p className=" md:inline-flex text-[14px] whitespace-nowrap md:text-base">
+            Felling Acivity
+          </p>
         </div>
       </div>
     </div>

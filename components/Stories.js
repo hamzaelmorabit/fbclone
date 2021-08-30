@@ -31,7 +31,7 @@ const STORIES = [
 export default function Stories() {
 
   return (
-    <div className="flex md:space-x-2 mt-3  space-x-2   justify-evenly">
+    <div className="flex md:space-x-6 mt-3    justify-center">
      {STORIES.map(({ name, src, profile }) => (
         <StoriesItem key={src} name={name} src={src} profile={profile} />
       ))} 
